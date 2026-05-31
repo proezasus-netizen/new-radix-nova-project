@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Analytics } from "@vercel/analytics/next";
 
 const fontSans = Inter({subsets:['latin'],variable:'--font-sans'});
 
@@ -22,6 +23,7 @@ export default function RootLayout({
         className="antialiased"
       >
         <ThemeProvider>{children}</ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
